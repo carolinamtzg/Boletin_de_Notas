@@ -1,4 +1,3 @@
-import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -16,55 +15,67 @@ public class Main {
   static Scanner scanner = new Scanner(System.in);
   public static void main(String[] args)  {
     // atributos:
-    String nombre = "Jose";
-    String apellidos = "Avila";
-    String nombreAsignatura = "Math";
-    double notaAsignatura = 10;
-    //List<Asignatura> asignaturas = Alumno.asignaturas;
 
-    // String respuesta = "N";
-    //List asignatura = ;
+    // constructor:
 
+    String respuestaAddEstudiante = "Y";
     
+    
+    while(respuestaAddEstudiante.equals("Y")){
+      String nombre = "";
+      String apellidos = "";
+  
+      System.out.print("Nombre Alumno: ");
+       nombre = scanner.next();
 
-      // System.out.print("Nombre del Alumno: ");
-      // nombre = scanner.nextLine();
+      System.out.print("Apellidos: ");
+      apellidos = scanner.next();
 
-      // System.out.print("Apellidos del Alumno: ");
-      // apellidos = scanner.nextLine();
-
-
-      // System.out.print("Asignatura: ");
-      // nombre_asignatura = scanner.nextLine();
-
-      // System.out.print("Nota: ");
-      // nota_asignatura = scanner.nextDouble();
-
-      // constructor:
       Alumno alumno = new Alumno(nombre, apellidos);
-      // alumno = { "nombre": "Jose", "apellidos": "Avila", "asignaturas": [] }
 
-      alumno.addAsignatura(nombreAsignatura, notaAsignatura);
-      // alumno = { "nombre": "Jose", "apellidos": "Avila", 
-      //            "asignaturas": [ { "nombre": "Math", "nota": 10 } ] }
-      alumno.addAsignatura("Python", 10);
-      // alumno = { "nombre": "Jose", "apellidos": "Avila", 
-      //            "asignaturas": [ { "nombre": "Math", "nota": 10 }, { "nombre": "Python", "nota": 10 } ] }
+      // añadir asignaturas y notas al alumno:
 
-      alumno.setNombre("Caro");
-      // alumno = { "nombre": "Caro", "apellidos": "Avila", 
-      //            "asignaturas": [ { "nombre": "Math", "nota": 10 }, { "nombre": "Python", "nota": 10 } ] }
-      
-    // imprimir el boletín de notas para comprobar que el sistema funciona correctamente
-    String boletin = alumno.mostrarBoletin();
-    System.out.println(boletin);
+      String respuestaAddAsignaturas = "Y";
+      while(respuestaAddAsignaturas.equals("Y")){
+        System.out.print("Asignatura: ");
+        String nombreAsignatura = scanner.next();
+        
+        System.out.print("Nota: ");
+        Double notaAsignatura = scanner.nextDouble();
+        
+        alumno.addAsignatura(nombreAsignatura, notaAsignatura);
 
-    System.out.print("¿Desea continuar? (Y/N): ");
-    // respuesta = scanner.nextLine();
+        System.out.print("¿Desea agregar otra asignatura? (Y/N): ");
+        respuestaAddAsignaturas = scanner.next();
+      }
+      // imprimir el boletín de notas para comprobar que el sistema funciona correctamente:
+      String boletin = alumno.mostrarBoletin();
+      System.out.println(boletin);
+      // modificar estas notas:
+      // Preguntar si quiere modificar asignatura
+      System.out.print("¿Quieres modificar alguna nota? (Y/N): ");
+      String respuestaModifyAsignaturas = scanner.next();
 
-    // metodos:
+      while(respuestaModifyAsignaturas.equals("Y")){
+        System.out.print("Asignatura: ");
+        String nombreAsignatura = scanner.next();
+        
+        System.out.print("Nota: ");
+        Double notaAsignatura = scanner.nextDouble();
+        
+        alumno.updateAsignatura(nombreAsignatura, notaAsignatura);
+    
+        // Mostrar boletin:
+        boletin = alumno.mostrarBoletin();
+        System.out.println(boletin);
+        // Preguntar si quiere modificar otra nota:
+        System.out.print("¿Quieres modificar alguna nota? (Y/N): ");
+        respuestaModifyAsignaturas = scanner.next();
+        }
+        
+      System.out.print("¿Desea agregar otro estudiante? (Y/N): ");
+      respuestaAddEstudiante = scanner.next();
+    }
 
-    // añadir asignaturas y notas al alumno
-    // modificar estas notas
   }
 }
