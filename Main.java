@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /*
 La interacción con el usuario (por ejemplo, añadir alumnos, asignaturas, modificar notas, etc.)
 se realizará a través del método main de la aplicación
@@ -14,9 +13,6 @@ public class Main {
 
   static Scanner scanner = new Scanner(System.in);
   public static void main(String[] args)  {
-    // atributos:
-
-    // constructor:
 
     String respuestaAddEstudiante = "Y";
     
@@ -46,7 +42,7 @@ public class Main {
         alumno.addAsignatura(nombreAsignatura, notaAsignatura);
 
         System.out.print("¿Desea agregar otra asignatura? (Y/N): ");
-        respuestaAddAsignaturas = scanner.next();
+        respuestaAddAsignaturas = scanner.next().toUpperCase();
       }
       // imprimir el boletín de notas para comprobar que el sistema funciona correctamente:
       String boletin = alumno.mostrarBoletin();
@@ -54,7 +50,7 @@ public class Main {
       // modificar estas notas:
       // Preguntar si quiere modificar asignatura
       System.out.print("¿Quieres modificar alguna nota? (Y/N): ");
-      String respuestaModifyAsignaturas = scanner.next();
+      String respuestaModifyAsignaturas = scanner.next().toUpperCase();
 
       while(respuestaModifyAsignaturas.equals("Y")){
         System.out.print("Asignatura: ");
@@ -70,11 +66,11 @@ public class Main {
         System.out.println(boletin);
         // Preguntar si quiere modificar otra nota:
         System.out.print("¿Quieres modificar alguna nota? (Y/N): ");
-        respuestaModifyAsignaturas = scanner.next();
+        respuestaModifyAsignaturas = scanner.next().toUpperCase();
         }
         
       System.out.print("¿Desea agregar otro estudiante? (Y/N): ");
-      respuestaAddEstudiante = scanner.next();
+      respuestaAddEstudiante = scanner.next().toUpperCase();
     }
 
   }

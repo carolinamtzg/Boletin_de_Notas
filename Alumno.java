@@ -55,7 +55,7 @@ public class Alumno {
 
   public void addAsignatura(String nombreAsignatura, double notaAsignatura) {
     Asignatura asignatura = new Asignatura(nombreAsignatura, notaAsignatura);
-    this.asignaturas.add(asignatura); 
+    this.asignaturas.add(asignatura);
   }
 
   public void updateAsignatura(String nombreAsignatura, double notaAsignatura) {
@@ -102,7 +102,7 @@ public class Alumno {
     }
 
     sb.append("-------------------------------------------------\n");
-    sb.append(String.format("Nota Media:\t\t\t\t%.1f", calcularPromedio()));
+    sb.append(String.format("Nota Media:\t\t\t\t%.1f", calcularPromedio())); // calcularPromedio()));
     return sb.toString();
                             }
   
