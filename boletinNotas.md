@@ -1,4 +1,6 @@
-# Boletines de Notas en Java Objetivo
+# Boletín de Notas en Java
+
+## Objetivo
 
 Desarrollar un sistema básico en Java para gestionar boletines de notas de alumnos de un curso. Este sistema permitirá:
 

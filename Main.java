@@ -24,7 +24,7 @@ public class Main {
       System.out.print("Nombre Alumno: ");
        nombre = scanner.next();
 
-      System.out.print("Apellidos: ");
+      System.out.print("Apellido: ");
       apellidos = scanner.next();
 
       Alumno alumno = new Alumno(nombre, apellidos);
