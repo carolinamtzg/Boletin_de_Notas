@@ -1,4 +1,4 @@
-# Boletín de Notas en Java
+# Boletín de Notas
 
 ## Objetivo
 
